@@ -11,6 +11,7 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
 import Link from 'next/link'; 
 import SvgIcon from '@mui/material/SvgIcon';
+import { useCart } from '../utils/CartContext';
 
 interface NavbarProps {
     children: React.ReactNode;
@@ -85,8 +86,8 @@ const Navbar = (props: NavbarProps) => {
     const [isOpenDrawer, setIsOpenDrawer] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
-    const [totalAmt, setTotalAmt] = useState("185");
-    const [productData, setproductData ] = useState(['test,test,test']);
+    const { totalAmt, productData } = useCart();
+
 
     if (typeof window !== 'undefined') {
         window.addEventListener('scroll', () => {
@@ -205,7 +206,7 @@ const Navbar = (props: NavbarProps) => {
 
                         </Link>
                         <p className='w-full h-5 mt-[-6px] text-center text-sm font-semibold text-black rounded-full'>
-                            ${totalAmt}
+                        ${Number(totalAmt).toFixed(2)}
                         </p>
                         <span className='absolute w-4 h-4 mt-[-3px]  bg-yellow-200 text-center text-sm font-bold text-black top-[0px] right-0 rounded-full'>
                             {productData.length > 0 ? productData.length : 0}

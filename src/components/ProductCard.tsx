@@ -1,4 +1,5 @@
 import React from 'react';
+import { useCart } from '@/utils/CartContext'; 
 
 interface Product {
     id: string;
@@ -13,6 +14,12 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ Details }) => {
+    const { addToCart } = useCart();
+
+    const handleAddToCart = () => {
+        addToCart(Details);
+    };
+
     return (
         <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow flex flex-col">
             <a href="#" className='flex justify-center items-center'>
@@ -21,7 +28,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ Details }) => {
             <div className="px-5 pb-5 flex-grow h-42">
                 <p className="text-gray-700 text-base mb-2">{Details.category}</p>
                 <a href="#">
-                    <h5 className="text-xl font-semibold tracking-tight text-gray-900 truncate">{Details.name}</h5> {/* Truncate long titles */}
+                    <h5 className="text-xl font-semibold tracking-tight text-gray-900 truncate">{Details.name}</h5>
                 </a>
                 <p className="text-gray-700 text-base mb-4">Manufacturer: {Details.manufacturer}</p>
                 <div className="flex items-center mt-2.5 mb-5">
@@ -36,7 +43,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ Details }) => {
                 </div>
                 <div className="flex items-center justify-between">
                     <span className="text-3xl font-bold text-gray-900 ">${Details.price}</span>
-                    <a href="#" className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Add to cart</a>
+                    <button onClick={handleAddToCart} className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Add to cart</button>
                 </div>
             </div>
         </div>

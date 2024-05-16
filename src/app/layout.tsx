@@ -5,6 +5,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Footer from '@/components/Footer';
+import { CartProvider } from '@/utils/CartContext';
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +19,11 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (
     <html lang="en">
       <body className={inter.className}>
+      <CartProvider >
         <Navbar children={children} /> 
         {children}
         <Footer />
+      </CartProvider>
       </body>
     </html>
   );
