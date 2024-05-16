@@ -12,7 +12,7 @@ interface CardProps {
 
 const PromoCard: React.FC<CardProps> = ({ title, description, link, imageUrl, image,promo }) => {
     return (
-        <div className="relative bg-red-500 rounded-lg shadow md:max-w-[500px] md:min-w-[500px] md:max-h-[250px] md:min-h-[250px] ">
+        <div className="relative rounded-lg shadow md:max-w-[500px] md:min-w-[500px] md:max-h-[250px] md:min-h-[250px] ">
             <Image src={imageUrl} alt="Background Image" layout="fill" objectFit="cover" className="rounded-lg" />
             <div className='flex   '>
                 <div className="relative z-10 pt-2 md:pt-10 pl-5 ">

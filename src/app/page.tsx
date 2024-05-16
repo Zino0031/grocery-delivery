@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from '@/components/Banner';
 import ProductCarousel from '@/components/ProductCarousel';
 import PromoCard from '@/components/PromoCard';
+import ServicesCard from '@/components/ServicesCard';
 
 const Page: React.FC = async () => {
   let productsDetails: any[] = [];
@@ -52,6 +53,24 @@ const Page: React.FC = async () => {
         <div className="mt-10 mx-10 md:mx-20">
         <ProductCarousel productsDetails={productsDetails.slice(10, 20)} title='Recently Added' filter={false} />
       </div>
+
+        <div className="flex flex-col md:flex-row justify-between items-center gap-5 mx-10 md:mx-40 mt-10 mb-10">
+      <ServicesCard
+                title="Best Prices & Deals"
+                desc="Dont miss our daily amazing deals and prices"
+                image="/deal.png"
+                />
+      <ServicesCard
+                title="Refundable "
+                desc="If your items have damage we agree to refund it"
+                image="/ref.png"
+                />
+      <ServicesCard
+                title="Free delivery"
+                desc="Do purchase over $50 and get free delivery anywhere"
+                image="/deliv.png"
+                />
+        </div>
     </div>
   );
 };
