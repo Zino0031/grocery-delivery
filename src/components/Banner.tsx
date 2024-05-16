@@ -28,9 +28,9 @@ function Banner() {
   }, []);
 
   return (
-    <div className='banner flex justify-center items-center' >
+    <div className='banner flex justify-center items-center ' >
     <img src="/bg1.png" alt="bg1" className='object-cover w-full h-full bg-green-300/10 absolute  pt-16 -z-10'  />
-      <div className=' mx-10 md:mx-40 mt-5'>
+      <div className=' mx-10 md:mx-40 mt-5 pt-10'>
         <div className='grid grid-cols-1 lg:grid-cols-2'>
           <div className='flex lg:items-center'>
             <div className=''>

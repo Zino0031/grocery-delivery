@@ -6,6 +6,7 @@ const page = () => {
     <div className="">
 
       <Banner />
+      <div className="py-40"></div>
     </div>
   )
 }
