@@ -88,10 +88,12 @@ const Navbar = (props: NavbarProps) => {
     const [totalAmt, setTotalAmt] = useState("185");
     const [productData, setproductData ] = useState(['test,test,test']);
 
-    window.addEventListener('scroll', () => {
-        setIsNavbarElevated(window.scrollY > 0);
-    });
-
+    if (typeof window !== 'undefined') {
+        window.addEventListener('scroll', () => {
+            setIsNavbarElevated(window.scrollY > 0);
+        });
+    }
+    
     useEffect(() => {
         setIsNavbarElevated(window.pageYOffset > 0);
     }, []);
