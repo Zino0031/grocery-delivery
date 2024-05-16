@@ -49,6 +49,9 @@ const Page: React.FC = async () => {
             />
      
         </div>
+        <div className="mt-10 mx-10 md:mx-20">
+        <ProductCarousel productsDetails={productsDetails.slice(10, 20)} title='Recently Added' filter={false} />
+      </div>
     </div>
   );
 };
