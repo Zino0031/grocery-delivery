@@ -54,7 +54,7 @@ const Page: React.FC = async () => {
         <ProductCarousel productsDetails={productsDetails.slice(10, 20)} title='Recently Added' filter={false} />
       </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-5 mx-10 md:mx-40 mt-10 mb-10">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-5 mx-10 md:mx-40 mt-10 mb-20">
       <ServicesCard
                 title="Best Prices & Deals"
                 desc="Dont miss our daily amazing deals and prices"
