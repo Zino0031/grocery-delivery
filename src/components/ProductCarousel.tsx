@@ -18,9 +18,10 @@ interface Product {
 interface ProductCarouselProps {
     productsDetails: Product[];
     title: string;
+    filter: boolean;
 }
 
-const ProductCarousel: React.FC<ProductCarouselProps> = ({ productsDetails, title }) => {
+const ProductCarousel: React.FC<ProductCarouselProps> = ({ productsDetails, title, filter }) => {
     const isExtraSmallScreen = useMediaQuery('(max-width: 664px)');
     const [selectedCategory, setSelectedCategory] = useState<string>('All');
     const [filteredProducts, setFilteredProducts] = useState<Product[]>(productsDetails);
@@ -43,22 +44,23 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({ productsDetails, titl
         <div>
             <div className="flex justify-between items-center mb-10">
                 <h1 className="text-2xl font-bold">{title}</h1>
-                <div className="flex justify-end">
-                    <div>
-                       
-                        {categories.map(category => (
-                            <button
-                                key={category}
-                                className={`mx-2 px-3 py-1  rounded ${
-                                    selectedCategory === category ? ' text-green-600 font-bold' : ''
-                                }`}
-                                onClick={() => handleCategorySelect(category)}
-                            >
-                                {category}
-                            </button>
-                        ))}
+                {filter && (
+                    <div className="flex justify-end">
+                        <div>
+                            {categories.map(category => (
+                                <button
+                                    key={category}
+                                    className={`mx-2 px-3 py-1 rounded ${
+                                        selectedCategory === category ? 'text-green-600 font-bold' : ''
+                                    }`}
+                                    onClick={() => handleCategorySelect(category)}
+                                >
+                                    {category}
+                                </button>
+                            ))}
+                        </div>
                     </div>
-                </div>
+                )}
             </div>
             <Swiper
                 slidesPerView={isExtraSmallScreen ? 1 : 5}

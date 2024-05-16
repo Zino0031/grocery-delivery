@@ -23,8 +23,11 @@ const Page: React.FC = async () => {
   return (
     <div className="">
       <Banner />
-      <div className="md:py-40 mt-10 mx-10 md:mx-20">
-        <ProductCarousel productsDetails={productsDetails} title='Products' />
+      <div className="md:pt-40 mt-10 mx-10 md:mx-20">
+        <ProductCarousel productsDetails={productsDetails} title='Products' filter={true} />
+      </div>
+      <div className="mt-10 mx-10 md:mx-20">
+        <ProductCarousel productsDetails={productsDetails.slice(0, 10)} title='10 Top Rated' filter={false} />
       </div>
     </div>
   );
