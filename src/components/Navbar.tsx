@@ -14,7 +14,7 @@ import SvgIcon from '@mui/material/SvgIcon';
 import { useCart } from '../utils/CartContext';
 
 interface NavbarProps {
-    children: React.ReactNode;
+    children?: React.ReactNode;
     window?: () => Window;
 }
 
@@ -46,7 +46,11 @@ function ElevationScroll({ children, window }: NavbarProps) {
         target: window ? window() : undefined,
     });
 
-    return React.cloneElement(children, {
+    if (!children) {
+        return null; 
+    }
+
+    return React.cloneElement(children as React.ReactElement<any>, {
         elevation: trigger ? 4 : 0,
     });
 }
