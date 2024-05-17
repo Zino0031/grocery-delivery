@@ -63,7 +63,7 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({ productsDetails, titl
                 )}
             </div>
             <Swiper
-                slidesPerView={isExtraSmallScreen ? 1 : 5}
+                slidesPerView={isExtraSmallScreen ? 1 : 4}
                 spaceBetween={30}
                 modules={[Pagination]}
                 className="mySwiper"

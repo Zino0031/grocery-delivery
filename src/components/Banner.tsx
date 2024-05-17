@@ -12,15 +12,15 @@ function Banner() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.banner',
-        start: '20% center',
-        end: 'bottom center',
+        start: '50% center',
+        end: 'bottom top',
         scrub: true,
         markers: false,
       },
     });
 
     tl.to('.Card2', {
-      y: 8,
+      y: 40,
     }).to('.Card1', {
       y: -80,
       duration: 1,

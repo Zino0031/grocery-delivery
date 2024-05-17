@@ -30,7 +30,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ Details }) => {
                 <a href="#">
                     <h5 className="text-xl font-semibold tracking-tight text-gray-900 truncate">{Details.name}</h5>
                 </a>
-                <p className="text-gray-700 text-base mb-4">Manufacturer: {Details.manufacturer}</p>
+                <p className="text-gray-700 text-base mb-4">{Details.manufacturer}</p>
                 <div className="flex items-center mt-2.5 mb-5">
                     <div className="flex items-center space-x-1 rtl:space-x-reverse">
                         {[...Array(4)].map((_, index) => (
